@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #f44336;} /* Red */
+.button2 {background-color: #555555;} /* Black */
+</style>
+
+
+
+</head>
+<body>
+
+
+<div id ="box">
+<form action="{% url 'game_functionality:index' %}" method="post" >
+{% csrf_token %}
+{% for i in i|rjust:9 %}
+
+
+    <input type="submit" name="btn" value="{{ forloop.counter }}"  onclick=" clickBtn('btn1')"/>
+    {% if forloop.counter|divisibleby:3 %}
+       </br>
+    {% endif %}
+
+{% endfor %}
+</form>
+<!--<input type="button" id ="btn2" onclick=" clickBtn('btn2')"/>-->
+<!--<input type="button" id ="btn3" onclick=" clickBtn('btn3')"/></br>-->
+<!--<input type="button" id ="btn4" onclick=" clickBtn('btn4')"/>-->
+<!--<input type="button" id ="btn5" onclick=" clickBtn('btn5')"/>-->
+<!--<input type="button" id ="btn6" onclick=" clickBtn('btn6')"/></br>-->
+<!--<input type="button" id ="btn7" onclick=" clickBtn('btn7')"/>-->
+<!--<input type="button" id ="btn8" onclick=" clickBtn('btn8')"/>-->
+<!--<input type="button" id ="btn9" onclick=" clickBtn('btn9')"/>-->
+
+</form>
+</div>
+
+
+</body>
+</html>
